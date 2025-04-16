@@ -13,8 +13,10 @@ public class DriverUtils {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("app", System.getProperty("user.dir") + "/src/apps/android/androidAPP.apk");
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("deviceName", "Pixel3A");
+        capabilities.setCapability("deviceName", "emulator-5554");
         capabilities.setCapability("automationName", "UiAutomator2");
+        capabilities.setCapability("newCommandTimeout", "300");
+        capabilities.setCapability("settings[disableIdLocatorAutocompletion]", true);
 
         try {
             driver = new AppiumDriver(new URL("http://127.0.0.1:4725/wd/hub"), capabilities);
